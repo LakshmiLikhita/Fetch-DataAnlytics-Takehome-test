@@ -42,6 +42,11 @@ I have developed a dashboard in Tableau with existing data to give the following
 
 I have used "Use as filter " option to "Quantity Purchased over week sheet" to be applicable to the rest of the sheets.i.e., if we select any day on the first worksheet, the data gets filtered out to that particular day in the "Quantity Purchased Across State" worksheet.
 
+Below screenshot gives the example when dashboard is filtered to Wednesday
+
+![Tableau Screenshot](https://user-images.githubusercontent.com/126197364/221463716-161ac6ed-ec1c-4f13-ad1b-bdc1cee49d40.png)
+
+
 **Exploratory Data Analysis:**
 
 - When we look at Reward Points column from Receipt Items table, we see that data is populated to only 5.9% of the records. We are not sure if the data os not populated in the backend or reward points are not given to the users. This might be one of the important points to improve the business. So there is a need to eliminate the ambiguity.
