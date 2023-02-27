@@ -18,7 +18,7 @@ I used MySQL to draw the ER Diagram.
 - Each receipt will have many items tagged to it. So I mapped **"One to many"** relationship between Receipts and Receipt_Items table
 - Each brand can be available in many receipts, so I mapped *"One to many"**
 - Since the brands table have related brand id column which has multiple values. It shows that the table is not in 1NF (first normalised form). So, I broke down the table into two parts which are brands table and brand_related_items table which has brand id and related_brand_id split into different rows.
-**Refererence : ER Diagram.pdf**
+**Refererence : ERD.pdf**
 
 
 **Second: Write a query that directly answers question(s) from a business stakeholder**
@@ -31,7 +31,7 @@ Then the SQL Server Import Wizard opens up to create a new destination table and
 
 After successful loading of data into master database, I have written the atached SQL queries (in MS SQL) for business questions given.
 
-**Reference : SQL_Queries.pdf**
+**Reference : FETCH SQL QUERIES.pdf**
 
 **Third: Choose something noteworthy about the data and share with a non-technical stakeholder**
 
