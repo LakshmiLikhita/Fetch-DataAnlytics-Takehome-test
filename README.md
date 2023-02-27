@@ -14,9 +14,10 @@ This information can be useful for analyzing user behavior and identifying trend
 
 **First: Review Existing Data and Diagram a New Structured Relational Data Model**
 I used MySQL to draw the ER Diagram.
-- Each user may have different receipts. So one user id in Users table will have multiple receipt ids in receipts table. So, I put **"One to many"**  relationship between Users and Receipts table.
-- Each receipt will have many items tagged to it. So I put **"One to many"** relationship between Receipts and Receipt_Items table
-- 
+- Each user may have different receipts. So one user id in Users table will have multiple receipt ids in receipts table. So, I mapped **"One to many"**  relationship between Users and Receipts table.
+- Each receipt will have many items tagged to it. So I mapped **"One to many"** relationship between Receipts and Receipt_Items table
+- Each brand can be available in many receipts, so I mapped *"One to many"**
+- Since the brands table have related brand id column which has multiple values. It shows that the table is not in 1NF (first normalised form). So, I broke down the table into two parts which are brands table and brand_related_items table which has brand id and related_brand_id split into different rows.
 **Refererence : ER Diagram.pdf**
 
 
@@ -36,8 +37,8 @@ After successful loading of data into master database, I have written the atache
 
 I have developed a dashboard in Tableau with existing data to give the following insights to stakeholders:
 - To forecast the Total items that will be purchased over the next quarter of 2023 so that the business can think about inventory management in the future
-- Purchased items over each day of the week to let business know on which day is most of the business happening so that we can marketing strategies over the remaining days to improve the business.
-- Quantity of items purchased across Bottom N States. Here I have given user the accessibility to filter on the number of states they chose to visualise for the least quantity purchased. By this metric, we can focus on the profitability of those particular least business states.
+- Quantity of Purchased items over each day of the week to let business know on which day is most of the business happening so that we can marketing strategies over the remaining days to improve the business.
+- Quantity of items purchased across Bottom N States. Here I have given user the accessibility to filter on the number of states they chose to visualise the states for the least quantity purchased. By this metric, we can focus on improving the profitability of those particular least business states.
 
 I have used "Use as filter " option to "Quantity Purchased over week sheet" to be applicable to the rest of the sheets.i.e., if we select any day on the first worksheet, the data gets filtered out to that particular day in the "Quantity Purchased Across State" worksheet.
 
@@ -45,7 +46,7 @@ I have used "Use as filter " option to "Quantity Purchased over week sheet" to b
 
 - When we look at Reward Points column from Receipt Items table, we see that data is populated to only 5.9% of the records. We are not sure if the data os not populated in the backend or reward points are not given to the users. This might be one of the important points to improve the business. So there is a need to eliminate the ambiguity.
 - When we look at the Sign_up_platform column from Users table, we see that the there are only two known values like ios,android and rest of the columns are either unknown or nulls. The same ambiguity is repeated here as well. We need to work on importing and expanding the business to more platforms rather than limiting the options to two of them where there is a chance to loose our potential customers/users.
-- 
+
 **Recommendations:**
 Based on the above analysis, Reward Points is one of the most important factor that can effect businesses marketing strategy and can lead to huge profits
 To increase the customer loyalty, incentivize customers to make the purchase, and promote engagement with a brand by using the reward points as a tool for marketing. Below are few of the marketing strategies that businesses use for their growth:
